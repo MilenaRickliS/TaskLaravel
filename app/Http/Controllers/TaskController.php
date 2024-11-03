@@ -31,6 +31,8 @@ class TaskController extends Controller
     public function store(Request $request){
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
+            'deadline' => 'nullable|date',
+            'status' => 'required|string|in:pendente,em andamento,concluída',
         ]);
     
     
@@ -46,6 +48,8 @@ class TaskController extends Controller
     public function update(Request $request, $id){
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
+            'deadline' => 'nullable|date',
+            'status' => 'required|string|in:pendente,em andamento,concluída',
         ]);
     
         $task = Task::find($id);

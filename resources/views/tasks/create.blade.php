@@ -9,6 +9,17 @@
         <label for="title">Título:</label>
         <input type="text" name="title" id="title" required>
         <br>
+        <label for="deadline">Data de Prazo:</label>
+        <input type="date" name="deadline" id="deadline">
+        <br>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="pendente" selected>Pendente</option>
+            <option value="em andamento">Em Andamento</option>
+            <option value="concluída">Concluída</option>
+        </select>
+        <br>
         <button  class="salvar" type="submit">Salvar</button>
         @if ($errors->any())
         <div class="alert alert-danger">
