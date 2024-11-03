@@ -14,6 +14,7 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::middleware(['auth'])->group(function () {
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
     Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+    Route::get('/tasks/{id}/show', [TaskController::class, 'show'])->where('id', '[0-9]+')->name('tasks.show');
     Route::get('/create', [TaskController::class, 'create'])->name('tasks.create');
     Route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->where('id', '[0-9]+')->name('tasks.edit');
     Route::put('/tasks/{id}', [TaskController::class, 'update'])->where('id', '[0-9]+')->name('tasks.update');

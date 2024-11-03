@@ -14,6 +14,16 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
+    public function show($id){
+        $task = Task::find($id);
+
+        if(!$task){
+            return redirect()->route('tasks.index')->with('error', 'Tarefa não encontrada.');
+        }
+
+        return view('tasks.show', compact('task'));
+    }
+
     public function create(){
         return view('tasks.create');
     }

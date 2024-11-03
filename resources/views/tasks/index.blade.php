@@ -9,8 +9,7 @@
     @foreach ($tasks as $task)
         <div class="task">
             <h2>{{ $task->title }}</h2>
-            <br>
-            <br>
+            <a class="show" href="{{ route('tasks.show', $task->id) }}">Visualizar Tarefa</a>
             <a class="editar" href="{{ route('tasks.edit', $task->id) }}">Editar Tarefa</a>
             <form action="{{ route('tasks.destroy', $task->id) }}" method="post">
                 @csrf
@@ -18,7 +17,7 @@
                 <button class="excluir" type="submit">Excluir Tarefa</button>
             </form>
         </div>
-        
+        <br>
     @endforeach
     </div>
    
