@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
-use Illuminate\Support\Facades\Storage;
+
 
 class TaskController extends Controller
 {
@@ -30,9 +30,11 @@ class TaskController extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
             'deadline' => 'nullable|date',
             'status' => 'required|string|in:pendente,em andamento,concluída',
+        ], [
+            'title.regex' => 'O título deve conter apenas letras.',
         ]);
     
     
@@ -47,9 +49,11 @@ class TaskController extends Controller
 
     public function update(Request $request, $id){
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
             'deadline' => 'nullable|date',
             'status' => 'required|string|in:pendente,em andamento,concluída',
+        ], [
+            'title.regex' => 'O título deve conter apenas letras.',
         ]);
     
         $task = Task::find($id);
