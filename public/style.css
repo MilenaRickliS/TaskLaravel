@@ -1,0 +1,167 @@
+/* login */
+.card{
+    border-radius: 20px;
+}
+.card-header{
+    text-align: center;
+    font-weight: bold;
+}
+.form-control{
+    border-radius: 10px;
+}
+.link-login{
+    font-weight: 400;
+    text-decoration: underline;
+    color: #000000;
+}
+.link-login:hover{
+    font-weight: bold;
+    color: #000000;
+}
+
+h1{
+    margin: 10px auto;
+    text-align: center;
+
+}
+.logout{
+    background-color: #313131;
+    color: rgb(255, 254, 254);
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    transition: .2s;
+}
+.logout:hover{
+    background-color: #141414;
+}
+
+/* index */
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.criar{
+    background-color: #4FF857;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .2s;
+    width: 100%;
+    text-align: center;
+}
+.criar:hover{
+    background-color: #09D713;
+    color: black;
+    text-decoration: none;
+}
+.tarefas{
+    margin-top: 10px;
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.task{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.show{
+    background-color: #AED9E0;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .2s;
+}
+.show:hover{
+    background-color: #5CB4C1;
+    color: black;
+    text-decoration: none;
+}
+.editar{
+    background-color: #FAFF70;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .2s;
+}
+.editar:hover{
+    background-color: #F7FF0A;
+    color: black;
+    text-decoration: none;
+}
+.excluir{
+    background-color: #FD7279;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .2s;
+    margin-top: 20px;
+    border: none;
+}
+.excluir:hover{
+    background-color: #FC3640;
+    color: black;
+    text-decoration: none;
+}
+.status-pendente {
+    color: red; 
+}
+.status-andamento {
+    color: orange; 
+}
+.status-concluida {
+    color: green; 
+}
+/* formularios */
+.form{
+    margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+input, select{
+    border-radius: 15px;
+    padding: 7px;
+    margin: 8px;
+}
+.salvar{
+    background-color: #4FF857;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    transition: .2s;
+    border: none;
+    width: 200px;
+}
+.salvar:hover{
+    background-color: #09D713;
+    color: black;
+
+}
+.voltar{
+    font-weight: 400;
+    text-decoration: underline;
+    color: rgb(0, 0, 0);    
+}
+.voltar:hover{
+    font-weight: bold;
+    color: black;
+}
+/* visualizar tarefa */
+.show-task{
+    margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}

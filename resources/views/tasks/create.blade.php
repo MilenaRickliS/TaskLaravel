@@ -2,9 +2,8 @@
 
 @section('content')
 <br>
-<a href="{{ route('tasks.index') }}" class="voltar" ><-- Voltar para lista de tarefas</a>
     <h1>Criar Tarefa</h1>
-    <form action="{{ route('tasks.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('tasks.store') }}" method="post" enctype="multipart/form-data" class="form">
         @csrf
         <label for="title">Título:</label>
         <input type="text" name="title" id="title" required>
@@ -30,5 +29,7 @@
             </ul>
         </div>
     @endif
+<br><br>
+    <a href="{{ route('tasks.index') }}" class="voltar" ><-- Voltar para lista de tarefas</a>
     </form>
 @endsection
