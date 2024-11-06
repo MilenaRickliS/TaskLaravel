@@ -30,7 +30,7 @@ class TaskController extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
+            'title' => 'required|string|max:255|regex:/^[\p{L}\s]+$/u',
             'deadline' => 'nullable|date',
             'status' => 'required|string|in:pendente,em andamento,concluída',
         ], [
@@ -49,7 +49,7 @@ class TaskController extends Controller
 
     public function update(Request $request, $id){
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
+            'title' => 'required|string|max:255|regex:/^[\p{L}\s]+$/u',
             'deadline' => 'nullable|date',
             'status' => 'required|string|in:pendente,em andamento,concluída',
         ], [
@@ -66,6 +66,6 @@ class TaskController extends Controller
         $task = Task::find($id);
 
         $task->delete();
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'Tarefa excluída com sucesso!');
     }
 }
