@@ -20,6 +20,8 @@
         </select>
         <br>
         <button  class="salvar" type="submit">Salvar</button>
+        <br>
+        <br>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

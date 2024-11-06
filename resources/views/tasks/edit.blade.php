@@ -25,6 +25,16 @@
         <button class="salvar" type="submit">Salvar</button>
         <br>
         <br>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+         @endif
+        <br>
         <a href="{{ route('tasks.index') }}" class="voltar" ><-- Voltar para lista de tarefas</a>
     </form>
 
