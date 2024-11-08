@@ -61,6 +61,15 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ], [
             'name.regex' => 'O nome deve conter apenas letras.',
+            'email.required' => 'O campo de email é obrigatório.',
+            'email.string' => 'O email deve ser uma string válida.',
+            'email.email' => 'O email deve ser um endereço de e-mail válido.',
+            'email.max' => 'O email não pode ter mais de 255 caracteres.',
+            'email.unique' => 'Este email já está em uso.',
+            'email.regex' => 'O email deve ser neste formato example@example.com',
+            'password.required' => 'O campo de senha é obrigatório.',
+            'password.min' => 'A senha deve ter pelo menos 8 caracteres.',
+            'password.confirmed' => 'As senhas não coincidem.',
         ]);
     }
 
@@ -76,6 +85,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+
+            
         ]);
     }
 }
